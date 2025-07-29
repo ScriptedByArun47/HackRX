@@ -1,9 +1,12 @@
 from pymongo import MongoClient
-
+import os
 # Hardcoded MongoDB config (adjust if needed)
-MONGO_URI = "mongodb+srv://kevin:Year2006@cluster0.c40cp0n.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+from dotenv import load_dotenv
+load_dotenv()
+
 DB_NAME = "hackrx"
 COLLECTION_NAME = "policy_clauses"
+MONGO_URI = os.getenv("MONGO_URI")
 
 def get_mongo_collection():
     client = MongoClient(MONGO_URI)

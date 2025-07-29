@@ -1,11 +1,12 @@
 fastapi
-uvicorn[standard]                  # FastAPI ASGI server
-sentence-transformers             # Embedding model
-pymupdf                           # PDF extraction (PyMuPDF)
-python-multipart                  # Form/file uploads
-pymongo                           # MongoDB client
-faiss-cpu                         # Vector similarity search
-ollama                            # Local model interface
-requests                          # For downloading files
-beautifulsoup4                    # For parsing HTML emails
-python-docx                       # For extracting DOCX files
+uvicorn[standard]
+google-generativeai 
+pymupdf
+python-multipart
+pymongo
+faiss-cpu
+requests
+beautifulsoup4
+python-docx
+ollama
+python-dotenv # Added for loading .env files

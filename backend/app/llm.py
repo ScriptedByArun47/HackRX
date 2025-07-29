@@ -3,9 +3,11 @@ import json
 import os
 import google.generativeai as genai
 from prompts import MISTRAL_SYSTEM_PROMPT_TEMPLATE, build_mistral_prompt
-
+from dotenv import load_dotenv
 # Directly set your Google API key
-genai.configure(api_key="AIzaSyD1nYVMEV5c5KWrO9cMpzPUYPSByM3wt00")
+load_dotenv()
+GEMINI_API= os.getenv("GEMINI_API")
+genai.configure(GEMINI_API)
 
 # Use the Gemini model (Gemma equivalent via Google)
 genai_model = genai.GenerativeModel('models/gemini-1.5-flash')
