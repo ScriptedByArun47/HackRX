@@ -9,4 +9,5 @@ requests
 beautifulsoup4
 python-docx
 ollama
-python-dotenv # Added for loading .env files
+python-dotenv
+transformers
