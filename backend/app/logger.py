@@ -1,20 +1,18 @@
-# app/logger.py
-
 import logging
 import os
 
-# Ensure the logs directory exists
+# Create the logs directory if it doesn't exist
 os.makedirs("logs", exist_ok=True)
 
-# Configure logging
+# Configure the root logger
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.INFO,  # Change to DEBUG for more verbose logs during dev
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.FileHandler("logs/hackrx.log"),
+        logging.FileHandler("logs/hackrx.log", mode='a', encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
 
-# Logger instance for use across the app
+# Named logger instance (optional: use different names for modular logging)
 logger = logging.getLogger("hackrx")
